@@ -1,0 +1,1 @@
+// Il y aura ici le js pour les scripts utilisés partout.
