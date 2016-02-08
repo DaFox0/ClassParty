@@ -14,13 +14,17 @@
 <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 <load-on-startup>1</load-on-startup>
 </servlet>
+
+<!-- ICI ce servlet sert à diriger toutes les url du projet vers le dispatcherServlet de spring-->
 <servlet-mapping>
 <servlet-name>do</servlet-name>
-<url-pattern>/*</url-pattern>
+<url-pattern>/*</url-pattern> 
 </servlet-mapping>
 
+<!-- ICI on va specifier que tout els fichier js, ajax et autres seront dans ce dossier-->
+<!-- Il va donc falloir créer un dossier nommé static en dessous de WEB inf-->
 <servlet-mapping>
  <servlet-name>default</servlet-name>
- <url-pattern>/static/*</url-pattern>
+ <url-pattern>/resources/*</url-pattern>
 </servlet-mapping>
 </web-app>
