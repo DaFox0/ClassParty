@@ -1,10 +1,12 @@
 package fr.classparty.models;
 
+import java.util.Date;
+
 public class Eleve {
 	private int idEleve;
 	private String nom;
 	private String prenom;
-	private int age;
+	private Date dateNaissance;
 	/**
 	 * Définit le type de l'utilisateur
 	 * 0 : élève
@@ -57,17 +59,17 @@ public class Eleve {
 		this.prenom = prenom;
 	}
 	/**
-	 * @return the age
+	 * @return the dateNaissance
 	 */
-	public int getAge() {
-		return age;
+	public Date getDateNaissance() {
+		return dateNaissance;
 	}
 	/**
-	 * @param age 
-	 * the age to set
+	 * @param dateNaissance 
+	 * the dateNaissance to set
 	 */
-	public void setAge(int age) {
-		this.age = age;
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
 	}
 	/**
 	 * @return the type

@@ -5,13 +5,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.ModelAndView;
 
-import fr.classparty.dto.EleveDTO;
+import fr.classparty.manager.EleveManager;
 import fr.classparty.models.Eleve;
 
 @Controller
@@ -23,21 +22,19 @@ public class AdminController {
 		Eleve antoine = new Eleve();
 		antoine.setPrenom("Antoine");
 		antoine.setNom("RAYNAUD");
-		antoine.setAge(21);
-		antoine.setType(2);
 		eleves.add(antoine);
 	}
-
-	@RequestMapping(value = "/eleve", method = RequestMethod.GET)
-	@ResponseStatus(HttpStatus.OK)
-	@ResponseBody
-	public List<EleveDTO> getEleves() {
-		ArrayList<EleveDTO> elevesDTO = new ArrayList<EleveDTO>();
-		for (int i = 0; i < eleves.size(); i++) {
-				EleveDTO c = new EleveDTO(eleves.get(i));
-				elevesDTO.add(c);
-			}
-		return elevesDTO;
+	@RequestMapping(value = "/showEleveForm", method = RequestMethod.GET)
+	public ModelAndView showEleveForm() {
+		return new ModelAndView("showEleveForm", "eleve", new Eleve());
+	}
+	
+	@RequestMapping(value = "/addEleve", method = RequestMethod.POST)
+	public ModelAndView addEleve(@ModelAttribute Eleve eleve) {
+		ModelAndView model = new ModelAndView("showEleveForm");
+		EleveManager eleveManager = new EleveManager();
+		eleveManager.addEleve(eleve);
+		return model;
 	}
 
 }
