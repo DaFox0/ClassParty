@@ -18,7 +18,6 @@ public class MainController {
 			HttpServletResponse response) throws Exception {
 
 		ModelAndView model = new ModelAndView("login");
-		model.addObject("pseudo", "Antoine");
 		return model;
 	}*/
 	
