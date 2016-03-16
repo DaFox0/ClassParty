@@ -29,6 +29,7 @@ public class AdminController {
 		return new ModelAndView("showEleveForm", "eleve", new Eleve());
 	}
 	
+	
 	@RequestMapping(value = "/addEleve", method = RequestMethod.POST)
 	public ModelAndView addEleve(@ModelAttribute Eleve eleve) {
 		ModelAndView model = new ModelAndView("showEleveForm");

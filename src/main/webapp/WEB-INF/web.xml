@@ -29,13 +29,11 @@
 </servlet-mapping>
 
 
-<!-- ICI on va specifier que tout els fichier js, ajax et autres seront dans ce dossier-->
-<!-- Il va donc falloir créer un dossier nommé static en dessous de WEB inf aze-->
+<!-- ICI on va specifier que tout les fichier js, ajax et autres seront dans ce dossier-->
+<!-- Il va donc falloir créer un dossier nommé static en dessous de WEB inf-->
 <servlet-mapping>
  <servlet-name>default</servlet-name>
  <url-pattern>/resources/*</url-pattern>
 </servlet-mapping>
-
-
 
 </web-app>

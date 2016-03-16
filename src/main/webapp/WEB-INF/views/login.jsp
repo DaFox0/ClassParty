@@ -10,7 +10,6 @@
 	<body>
 	
 		Vous êtes connecté en tant que ${message}
-		<%@ include file="essaie.jsp"%>	
 	
 	</body>
 </html>

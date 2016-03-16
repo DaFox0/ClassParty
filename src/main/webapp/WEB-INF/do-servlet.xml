@@ -21,19 +21,9 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 <bean id="adminController" class="fr.classparty.controllers.AdminController">
 </bean>
 
-
-<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-   <property name="messageConverters">
-       <list>
-           <ref bean="jsonConverter" />
-       </list>
-   </property>
+<bean id="mainController" class="fr.classparty.controllers.MainController">
 </bean>
 
-<bean id="jsonConverter" 
-            class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-   <property name="supportedMediaTypes" value="application/json" />
-</bean>
 
 
 </beans>

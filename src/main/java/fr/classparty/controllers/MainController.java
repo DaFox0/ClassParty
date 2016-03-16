@@ -10,23 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/login")
-
 public class MainController {
-
-	/*public ModelAndView hello(HttpServletRequest request,
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-
 		ModelAndView model = new ModelAndView("login");
+		model.addObject("message", "Hello Spring MVC Framework!");
 		return model;
-	}*/
-	
+	}
 
-	
-	@RequestMapping(method = RequestMethod.GET)
-	   public String printHello(ModelMap model) {
-	      model.addAttribute("message", "Hello Spring MVC Framework!");
-	      return "login";
-	   }
 	
 }
