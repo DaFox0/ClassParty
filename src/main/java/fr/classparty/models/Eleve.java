@@ -8,12 +8,12 @@ public class Eleve {
 	private String prenom;
 	private Date dateNaissance;
 	/**
-	 * Définit le type de l'utilisateur
-	 * 0 : élève
-	 * 1 : modérateur
-	 * 		Un modérateur gère sa classe
+	 * Definit le type de l'utilisateur
+	 * 0 : eleve
+	 * 1 : moderateur
+	 * 		Un moderateur gere sa classe
 	 * 2 : administrateur
-	 * 		Un administrateur gère les modérateurs et les classes
+	 * 		Un administrateur gere les moderateurs et les classes
 	 */
 	private int type;
 	private int classe;
