@@ -1,6 +1,5 @@
 package test;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,7 +8,11 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import fr.classparty.models.Eleve;
-
+/**
+ * Test de la création d'un eleve
+ * @author adeclerck
+ *
+ */
 public class Test {
 
 	public static void main(String[] args) {
