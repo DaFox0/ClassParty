@@ -1,22 +1,41 @@
 package fr.classparty.models;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Eleve {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idEleve;
 	private String nom;
 	private String prenom;
-	private Date dateNaissance;
+	private String dateNaissance;
 	/**
-	 * Définit le type de l'utilisateur
-	 * 0 : élève
-	 * 1 : modérateur
-	 * 		Un modérateur gère sa classe
+	 * Definit le type de l'utilisateur
+	 * 0 : eleve
+	 * 1 : moderateur
+	 * 		Un moderateur gere sa classe
 	 * 2 : administrateur
-	 * 		Un administrateur gère les modérateurs et les classes
+	 * 		Un administrateur gere les moderateurs et les classes
 	 */
 	private int type;
 	private int classe;
+	
+	public Eleve(){
+		super();
+	}
+	
+	public Eleve(String nom, String prenom, String dateNaissance, int type, int classe){
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.type = type;
+		this.classe = classe;
+	}
 	
 	/**
 	 * @return the idEleve
@@ -61,14 +80,14 @@ public class Eleve {
 	/**
 	 * @return the dateNaissance
 	 */
-	public Date getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
 	/**
 	 * @param dateNaissance 
 	 * the dateNaissance to set
 	 */
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 	/**
