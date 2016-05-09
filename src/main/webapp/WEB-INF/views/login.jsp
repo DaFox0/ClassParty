@@ -8,7 +8,7 @@
         <link type="text/css" rel="stylesheet" href="form.css" />
     </head>
     <body>
-        <form method="get" action="login">
+        <form method="get" action="log">
             <fieldset>
                 <legend>Connexion</legend>
                 <p>Vous pouvez vous connecter via ce formulaire.</p>
