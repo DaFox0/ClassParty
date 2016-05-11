@@ -19,7 +19,7 @@ public class Test {
 		
 		System.out.println("ok");
 		// Appelle le constructeur eleve
-		Eleve eleve = new Eleve("Hoze", "Thomas", "17/01/1994", 0, 0);
+		Eleve eleve = new Eleve("Hoze", "Thomas", "17/01/1994");
 		
 		//Appelle la persistence qui permet de se connecter à la base de donnée 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("manager1");

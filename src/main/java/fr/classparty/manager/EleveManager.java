@@ -3,7 +3,6 @@ package fr.classparty.manager;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import fr.classparty.models.Eleve;
 
@@ -19,8 +18,6 @@ public class EleveManager {
 		eleve.setNom(e.getNom());
 		eleve.setPrenom(e.getPrenom());
 		eleve.setDateNaissance(e.getDateNaissance());
-		eleve.setClasse(e.getClasse());
-		eleve.setType(e.getType());
 		eleveList.add(eleve);
 		return eleve;
 	}
@@ -30,8 +27,7 @@ public class EleveManager {
 		eleve.setNom(e.getNom());
 		eleve.setPrenom(e.getPrenom());
 		eleve.setDateNaissance(e.getDateNaissance());
-		eleve.setClasse(e.getClasse());
-		eleve.setType(e.getType());
+
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("manager1");
 		EntityManager entityManager = emf.createEntityManager();
