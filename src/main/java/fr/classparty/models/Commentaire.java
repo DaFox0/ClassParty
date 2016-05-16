@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
-
 @Entity
 public class Commentaire {
 	@Id
@@ -19,6 +17,9 @@ public class Commentaire {
 	private int idCommentaire;
 	@ManyToOne
 	private Eleve eleve;
+	@ManyToOne
+	private Photo photo;
+	private String contenu;
 	private Timestamp heure;
 	
 	public Commentaire() {
@@ -40,5 +41,11 @@ public class Commentaire {
 	}
 	public void setHeure(Timestamp heure) {
 		this.heure = heure;
+	}
+	public String getContenu() {
+		return contenu;
+	}
+	public void setContenu(String contenu) {
+		this.contenu = contenu;
 	}
 }

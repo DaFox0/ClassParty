@@ -7,6 +7,19 @@ import javax.persistence.Persistence;
 import fr.classparty.models.Eleve;
 
 public class EleveManager {
+	
+	EntityManager entityManager;
+	
+	public EleveManager() {
+		super();
+		// TODO Auto-generated constructor stub
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("manager1");
+		entityManager = emf.createEntityManager();
+		
+	}
+
+	
+	
 	private static List<Eleve> eleveList;
 	 
 	public static List<Eleve> getEleveList() {

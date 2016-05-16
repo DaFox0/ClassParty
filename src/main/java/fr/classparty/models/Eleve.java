@@ -27,6 +27,8 @@ public class Eleve {
 	private String nom;
 	private String prenom;
 	private String dateNaissance;
+	private String login;
+	private String password;
 	/**
 	 * Definit le type de l'utilisateur
 	 * 0 : eleve
@@ -42,10 +44,12 @@ public class Eleve {
 		super();
 	}
 	
-	public Eleve(String nom, String prenom, String dateNaissance){
+	public Eleve(String nom, String prenom, String dateNaissance, String login, String password){
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
+		this.login = login;
+		this.password = password;
 	}
 	
 	/**
@@ -100,6 +104,22 @@ public class Eleve {
 	 */
 	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
