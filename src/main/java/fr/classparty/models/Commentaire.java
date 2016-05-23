@@ -48,4 +48,16 @@ public class Commentaire {
 	public void setContenu(String contenu) {
 		this.contenu = contenu;
 	}
+	public Eleve getEleve() {
+		return eleve;
+	}
+	public void setEleve(Eleve eleve) {
+		this.eleve = eleve;
+	}
+	public Photo getPhoto() {
+		return photo;
+	}
+	public void setPhoto(Photo photo) {
+		this.photo = photo;
+	}
 }
