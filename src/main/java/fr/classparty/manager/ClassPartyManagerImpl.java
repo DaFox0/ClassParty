@@ -42,26 +42,26 @@ public class ClassPartyManagerImpl implements IClassPartyManager{
 
 	@Override
 	public List<Eleve> listerEleve() {
-		Query req=entityManager.createQuery("select e from Eleve e");
+		Query req = entityManager.createQuery("select * from Eleve e");
 		return req.getResultList();
 	}
 
 	@Override
 	public List<Eleve> eleveParNom(String nom) {
-		Query req=entityManager.createQuery("select e from Eleve e WHERE nom = "+nom);
+		Query req=entityManager.createQuery("select * from Eleve e WHERE nom = "+nom);
 		return req.getResultList();
 	}
 
 	@Override
 	public List<Eleve> eleveParPrenom(String prenom) {
-		Query req=entityManager.createQuery("select e from Eleve e WHERE prenom = "+prenom);
+		Query req=entityManager.createQuery("select * from Eleve e WHERE prenom = "+prenom);
 		return req.getResultList();
 	}
 
 	@Override
 	public List<Eleve> eleveParClasse(String niveau, int annee) {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from Eleve e inner join Classe c on c.idclasse = e.classe_idclasse where c.niveau = "+niveau+" and c.annee ="+annee);
+		return req.getResultList();
 	}
 
 	@Override
@@ -71,133 +71,136 @@ public class ClassPartyManagerImpl implements IClassPartyManager{
 
 	@Override
 	public void ajouterClasse(Classe c) {
-		// TODO Auto-generated method stub
+		entityManager.persist(c);
 		
 	}
 
 	@Override
 	public void supprimerClasse(Classe c) {
-		// TODO Auto-generated method stub
+		entityManager.remove(c);
 		
 	}
 
 	@Override
 	public void modifierClasse(Classe c) {
-		// TODO Auto-generated method stub
+		entityManager.merge(c);
 		
 	}
 
 	@Override
 	public List<Classe> listerClasseParNiveau(String niveau) {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from Classe c WHERE c.niveau ="+niveau);
+		return req.getResultList();
 	}
 
 	@Override
-	public List<Classe> listerClasseParAnnee(int Annee) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Classe> listerClasseParAnnee(int annee) {
+		Query req = entityManager.createQuery("select * from Classe c WHERE c.annee ="+annee);
+		return req.getResultList();
 	}
 
 	@Override
 	public void ajouterFichier(Fichier f) {
-		// TODO Auto-generated method stub
-		
+		entityManager.persist(f);
 	}
 
 	@Override
 	public void supprimerFichier(Fichier f) {
-		// TODO Auto-generated method stub
+		entityManager.remove(f);
 		
 	}
 
 	@Override
 	public void modifierFichier(Fichier f) {
-		// TODO Auto-generated method stub
+		entityManager.merge(f);
 		
 	}
 
 	@Override
 	public List<Fichier> listerFichier() {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from Fichier f");
+		return req.getResultList();
 	}
 
 	@Override
 	public List<Fichier> listerFichierParClasse(int idClasse) {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from Fichier f JOIN fichier_classe fc on f.idfichier = fc.classes_idfichier WHERE fc.idclasse ="+idClasse);
+		return req.getResultList();
 	}
 
 	@Override
 	public List<Fichier> listerFichierParEleve(int idEleve) {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from Fichier f WHERE f.eleve_ideleve ="+idEleve);
+		return req.getResultList();
 	}
 
 	@Override
 	public void ajouterPhoto(Photo p) {
-		// TODO Auto-generated method stub
+		entityManager.persist(p);
 		
 	}
 
 	@Override
 	public void supprimerPhoto(Photo p) {
-		// TODO Auto-generated method stub
+		entityManager.remove(p);
 		
 	}
 
 	@Override
 	public void modifierPhoto(Photo p) {
-		// TODO Auto-generated method stub
+		entityManager.merge(p);
 		
 	}
 
 	@Override
 	public List<Fichier> listerPhoto() {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from Photo p");
+		return req.getResultList();
 	}
 
 	@Override
 	public List<Fichier> listerPhotoParEleve(int idEleve) {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from Photo p where p.eleve_ideleve ="+idEleve);
+		return req.getResultList();
 	}
 
 	@Override
 	public Commentaire ajouterCommentaire(Photo p, Eleve e) {
-		// TODO Auto-generated method stub
-		return null;
+		entityManager.persist(e);
+		Commentaire com = new Commentaire();
+		com.setEleve(e);
+		com.setPhoto(p);
+		entityManager.persist(com);
+		return com;
 	}
 
 	@Override
 	public void supprimerCommentaire(Commentaire c) {
-		// TODO Auto-generated method stub
+		entityManager.remove(c);
 		
 	}
 
 	@Override
 	public void modifierCommentaire(Commentaire c) {
-		// TODO Auto-generated method stub
+		entityManager.merge(c);
 		
 	}
 
 	@Override
 	public List<Commentaire> listerCommentaireParPhoto(int idPhoto) {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from Commentaire c WHERE c.photo_idphoto ="+idPhoto);
+		return req.getResultList();
 	}
 
 	@Override
 	public List<Commentaire> listerCommentaireParEleve(int idEleve) {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from Commentaire c WHERE e.eleve_ideleve ="+idEleve);
+		return req.getResultList();
 	}
 
 	@Override
 	public List<TypeUtilisateur> listerTypeUtilisateur() {
-		// TODO Auto-generated method stub
-		return null;
+		Query req = entityManager.createQuery("select * from typeutilisateur tu");
+		return req.getResultList();
 	}
 }
