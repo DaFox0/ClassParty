@@ -1,0 +1,398 @@
+/********* GENERAL *********/
+
+body
+{
+	background-color: #FDFEFE;
+}
+
+#clear
+{
+	clear:both;
+}
+
+#conteneur
+{
+	width: 768px;
+	margin:auto;
+	margin-top: -103.5px;
+}
+
+#bande
+{
+	width: auto;
+	height:103.5px;
+	background-color: #3B5998;
+}
+
+/********* FIN GENERAL  *********/
+
+/********* HEADER *********/
+
+header
+{
+	
+	background-color: #3B5998;
+}
+
+#logo
+{
+	float:left;
+}
+
+#logo_texte
+{
+	float:left;
+	padding-top: 10px;
+	padding-left: 10px;
+	color:#FDFEFE;
+}
+
+#titre
+{
+	float:left;
+	color:#FDFEFE;
+	font-size: 25px;
+	margin-left:79px;
+	margin-top: 29px;
+}
+
+
+/********* FIN HEADER *********/
+
+/********* MENU *********/
+
+#menu
+{
+	width:768px;
+	margin:30px 0 30px 0;
+}
+
+.onglet
+{
+	text-decoration:none;
+	color:black;
+	width:162px;
+	float: left;
+	text-align: center;
+}
+
+#onglet_debut
+{
+	margin:0 0 0 30px;
+	background-color: #DF0236 ;
+	color:#FDFEFE;
+}
+
+#onglet_deux
+{
+	background-color: #00A5CD ;
+	color:#FDFEFE;
+}
+
+#onglet_trois
+{
+	background-color: #53AF31 ;
+	color:#FDFEFE;
+}
+
+#onglet_quatre
+{
+	background-color: #F0800E ;
+	color:#FDFEFE;
+}
+
+#onglet_debut:hover, #onglet_deux:hover, #onglet_trois:hover, #onglet_quatre:hover 
+{
+	color:black;
+}
+
+
+/********* FIN MENU *********/
+
+
+
+/********* FOOTER *********/
+
+footer
+{
+	height: 103.5px;
+	border-top: 1px solid #3B5998;
+
+}
+
+#condition_general
+{
+	float: left;
+	margin:35px 0 0 137px;
+	color:#3B5998;
+	text-decoration: none;
+
+}
+
+#mentions_legal
+{
+	margin:35px 0 0 70px;
+	float: left;
+	color:#3B5998;
+}
+
+#reglement_site
+{
+	margin:35px 0 0 70px;
+	float: left;
+	color:#3B5998;
+}
+
+/********* FIN FOOTER*********/
+
+/********* ACCUEUIL *********/
+
+#exp_fil
+{
+	width: 768px;
+	margin:35px 0 35px 0;
+
+}
+
+#explication
+{
+	width:383px;
+	float:left;
+	word-wrap: break-word;
+	border-right: 1px solid black;
+}
+
+#fil_actus
+{
+	width:384px;
+	float:left;
+}
+
+/********* FIN ACCUEUIL*********/
+
+/********* LOGIN *********/
+
+#formulaire_login
+{
+	margin-top: 211px;
+	margin-bottom: 211px;
+}
+
+#identifiant
+{
+	margin-left:100px;
+	float: left;
+}
+
+#mot_de_passe
+{
+	margin-left:10px;
+	float: left;
+}
+
+/********* FIN LOGIN*********/
+
+/********* DIALOGUE *********/
+
+#section_status
+{	
+	width: 205px;
+	float:left;
+}
+
+#liste_membre
+{	
+	width: 200px;
+	height: 50px;
+	margin: 100px 0 0 0; 
+	border: 2px solid #EF7E15;
+	border-radius: 10px;
+}
+
+#membre_connecter
+{	
+	width: 200px;
+	height: 500px;
+	margin: 0 0 50px 0; 
+	border: 2px solid #EF7E15;
+	border-radius: 10px;
+}
+
+.titre_liste_membre
+{
+	margin: 15px 0 0 17px;
+}
+
+.status_connecter
+{
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	margin: 5px 10px 0 10px;
+	float:left; 
+	background-color: #53AD34;
+}
+
+.status_non_connecter
+{
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	margin: 5px 10px 0 10px;
+	float:left; 
+	background-color: red;
+}
+
+.status
+{
+	width: 200px;
+	height: 21px;
+	margin: 5px 0 0 0;
+}
+
+.pseudo
+{	
+	float:left;
+	margin:0 0 0 0;
+}
+
+#section_tchat
+{	
+	width: 353px;
+	margin: 100px 0 0 10px; 
+	float:left;
+}
+
+#tchat
+{	
+	width: 352px;
+	height: 400px;
+	margin: 0 0 0 0; 
+	border: 2px solid #EF7E15;
+	border-radius: 10px;
+	float:left;
+}
+
+.texte_dialogue
+{
+	
+	width:340px;
+	height: 100px;
+	margin: 10 0 0 0;
+}
+
+.bouton
+{
+	margin: 5 0 0 0;
+	border-radius: 10px;
+	background-color: #EF7E15;
+	color:#FDFEFE;
+}
+
+#message
+{
+	width:352px;
+
+}
+
+.dialogue_pseudo
+{
+	width:60px;
+	margin:10 0 0 10;
+	float:left;
+}
+
+.affichage_message
+{
+	width:260px;
+	margin: 10 0 0 10;
+	float:left;
+	border:none;
+	overflow: hidden;
+	height: 100px;
+	word-wrap: break-word;
+}
+
+
+/********* FIN DIALOGUE*********/
+
+/********* LIVRE OR *********/
+
+
+.anner
+{
+	width:768px;
+	margin:30px 0 0 0;
+}
+
+.barre_anner
+{
+	width:256px;
+	margin:0 0 0 0;
+	border-top: 2px solid #336633;
+	float:left;
+}
+
+.afficher_anner
+{
+	width:256px;
+	margin: -10px 0 0 0;
+	float:left;
+	text-align: center;
+}
+
+.citation
+{
+	width:768px;
+	margin: 20px 0 20px 0;
+}
+
+.citation_text
+{
+	width:250px;
+	word-wrap: break-word;
+	margin:auto;
+}
+
+.citation_auteur
+{
+	width:250px;
+	word-wrap: break-word;
+	margin:auto;
+	text-align: center;
+}
+
+.form_livre_or
+{
+	width:768px;
+	word-wrap: break-word;
+	margin:50px auto 50px auto;
+	
+}
+
+.bouton_livre_or
+{
+	border-radius: 10px;
+	background-color: #EF7E15;
+	color:#FDFEFE;
+	margin:auto;
+}
+
+.poster_citation
+{
+	width:340px;
+	height:100px;
+	margin:auto;
+}
+
+.section_anner
+{
+	width:768px;
+}
+
+
+
+
+
+
+/********* FIN LIVRE OR *********/

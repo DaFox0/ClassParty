@@ -14,8 +14,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
+	////LOGIN
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView accueil(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		ModelAndView model = new ModelAndView("login");
+		return model;
+	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		ModelAndView model = new ModelAndView("login");
