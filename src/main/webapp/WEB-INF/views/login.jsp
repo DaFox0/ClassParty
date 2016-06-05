@@ -1,18 +1,21 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
-		<spring:url value="/resources/css/main.css" var="mainCss" />
-		<spring:url value="/resources/js/jquery.1.10.2.min.js" var="jqueryJs" />
-		<spring:url value="/resources/js/main.js" var="mainJs" />
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Insert title here</title>
-	</head>
-	<body>
-	
-		Vous êtes connecté en tant que ${pseudo}
-	
-	</body>
-</html>
+
+<%@ include file="/WEB-INF/views/static/head.jsp" %>
+<%@ include file="/WEB-INF/views/static/header.jsp" %>
+
+<div id="conteneur">
+	<form id="formulaire_login" method="post" action="login">
+		<fieldset>
+			<legend><spring:message code="form.login.legende"/></legend>
+			<p class="champLogin">
+				<label for="pseudo"><spring:message code="form.login.pseudo"/></label>
+				<input type="text" name="pseudo" id="pseudo"/>
+			</p>
+			<p class="champLogin">
+				<label for="password"><spring:message code="form.login.password"/></label>
+				<input type="password" name="password" id="password" /> 			
+			</p><br/>
+			<input type="submit" name="loginSubmit" id="loginSubmit" value="<spring:message code="form.login.login"/>">
+		</fieldset>
+	</form>
+</div> <!-- FIN CONTENEUR -->
+<%@ include file="/WEB-INF/views/static/footer.jsp" %>

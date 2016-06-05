@@ -21,6 +21,11 @@
 		</property>
 	</bean>
 	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	    <property name="basename" value="classpath:native2ascii/messages" />
+	    <property name="useCodeAsDefaultMessage" value="true" />
+	</bean>
+
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	
 	<mvc:annotation-driven />
