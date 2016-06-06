@@ -16,6 +16,11 @@ body
 	margin:auto;
 	margin-top: -103.5px;
 }
+label{
+	display: block;
+    width: 150px;
+    float: left;
+}
 
 /********* FIN GENERAL  *********/
 
@@ -178,7 +183,10 @@ footer
 .champLogin
 {
 	margin-left:100px;
-	float: left;
+}
+
+#loginSubmit{
+	margin-left:41.5%;
 }
 
 /********* FIN LOGIN*********/
@@ -382,8 +390,10 @@ footer
 }
 
 
-
-
-
-
 /********* FIN LIVRE OR *********/
+
+#messageErreur{
+	font:bold;
+	color: red;
+	text-align:center;
+}

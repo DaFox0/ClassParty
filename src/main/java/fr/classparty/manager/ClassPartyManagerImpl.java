@@ -31,9 +31,14 @@ public class ClassPartyManagerImpl implements IClassPartyManager{
 	}
 	
 	@Override
-	public List<Eleve> connexion(String login, String password) {
-		Query req=entityManager.createQuery("select idEleve from Eleve e WHERE login = "+login+" and password= "+password);
-		return req.getResultList();
+	public int connexion(String login, String password) {
+		try{
+			Query req=entityManager.createQuery("select e.idEleve from Eleve e WHERE e.login = '"+login+"' and e.password= '"+password+"'");
+			return (int) req.getSingleResult();
+		}catch(Exception ex){
+			return 0;
+		}
+		
 	}
 	
 	

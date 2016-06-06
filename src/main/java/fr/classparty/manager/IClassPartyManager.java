@@ -12,7 +12,7 @@ import fr.classparty.models.TypeUtilisateur;
 public interface IClassPartyManager {
 	//Eleve
 	public Eleve selectionnerEleve(int idEleve);
-	public List<Eleve> connexion(String login, String password);
+	public int connexion(String login, String password);
 	public void modifierEleve(Eleve e);
 	public void supprimerEleve(Eleve e);
 	public List<Eleve> listerEleve();

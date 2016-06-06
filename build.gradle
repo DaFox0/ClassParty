@@ -9,7 +9,6 @@ repositories {
 
 dependencies {
 compile 'org.apache.commons:commons-lang3:3.4'
-compile 'commons-codec:commons-codec:1.10'
 compile 'javax.servlet:jstl:1.2'
 compile 'org.springframework.hateoas:spring-hateoas:0.9.0.RELEASE' 
 compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.12'

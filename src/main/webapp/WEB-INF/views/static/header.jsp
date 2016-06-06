@@ -12,3 +12,4 @@
 				</p>
 				<div id="clear"></div>
 </header>
+<div id="messageErreur">${messageErreur}</div>

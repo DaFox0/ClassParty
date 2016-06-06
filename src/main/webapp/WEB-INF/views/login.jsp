@@ -3,17 +3,17 @@
 <%@ include file="/WEB-INF/views/static/header.jsp" %>
 
 <div id="conteneur">
-	<form id="formulaire_login" method="post" action="login">
+	<form:form id="formulaire_login" method="post" action="login" modelAttribute="eleve">
 		<fieldset>
 			<legend><spring:message code="form.login.legende"/></legend>
 			<p class="champLogin">
-				<label for="pseudo"><spring:message code="form.login.pseudo"/></label>
-				<input type="text" style="margin-left:57px;" name="pseudo" id="pseudo"/><br/><br/>
+				<label for="login"><spring:message code="form.login.pseudo"/></label>
+				<form:input path="login" /> <br/><br/>
 				<label for="password"><spring:message code="form.login.password"/></label>
-				<input type="password" name="password" id="password" /> 			
-			</p><br/>
+				<form:input path="password"/>	
+			</p>
+			<input type="submit" name="loginSubmit" id="loginSubmit" value="<spring:message code="form.login.login"/>">
 		</fieldset>
-		<input type="submit" name="loginSubmit" id="loginSubmit" value="<spring:message code="form.login.login"/>">
-	</form>
+	</form:form>
 </div> <!-- FIN CONTENEUR -->
 <%@ include file="/WEB-INF/views/static/footer.jsp" %>
