@@ -9,19 +9,18 @@ import javax.persistence.Persistence;
 
 import fr.classparty.models.Eleve;
 /**
- * Test de la création d'un eleve
+ * Test de la crï¿½ation d'un eleve
  * @author adeclerck
  *
  */
 public class Test {
 
 	public static void main(String[] args) {
-		
-		System.out.println("ok");
+		System.out.println("CrÃ©ation de la base et d'un utilisateur.");
 		// Appelle le constructeur eleve
 		Eleve eleve = new Eleve("Hoze", "Thomas", "17/01/1994", "picouze", "12345");
 		
-		//Appelle la persistence qui permet de se connecter à la base de donnée 
+		//Appelle la persistence qui permet de se connecter ï¿½ la base de donnï¿½e 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("manager1");
 		EntityManager entityManager = emf.createEntityManager();
 		
@@ -36,11 +35,7 @@ public class Test {
 		int id = eleve.getIdEleve();
 		Eleve e =  entityManager.find(fr.classparty.models.Eleve.class, id) ;
 		List<Eleve> liste = entityManager.createQuery( "SELECT e FROM Eleve e ").getResultList();
-		for (Eleve e1: liste){
-					System.out.println(e1.getIdEleve()) ;
-		}
-
-
+		System.out.println("Base crÃ©Ã©e.");
 	}
 
 }

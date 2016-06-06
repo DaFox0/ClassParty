@@ -36,7 +36,6 @@ public class MainController {
 			HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		ModelAndView model = new ModelAndView("login");
-		System.out.println(eleve.getLogin() + " : LOGIN" + eleve.getPassword() + " : PASSWORD");
 		if(controleLogin(eleve.getLogin(),eleve.getPassword())){
 			model.setViewName("accueil");
 			model.addObject("titre",TITRE_ACCUEIL);
@@ -50,7 +49,6 @@ public class MainController {
 	
 	private boolean controleLogin(String user, String password){
 		if (StringUtils.isNotEmpty(user) && StringUtils.isNotEmpty(password)){
-			System.out.println("conn : "+ metier.connexion(user, password));
 			if(metier.connexion(user, password) > 0){
 				return true;
 			}
