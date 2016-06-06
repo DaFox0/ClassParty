@@ -29,6 +29,14 @@ public class ClassPartyManagerImpl implements IClassPartyManager{
 	public Eleve selectionnerEleve(int idEleve) {
 		return entityManager.find(Eleve.class,idEleve);
 	}
+	
+	@Override
+	public List<Eleve> connexion(String login, String password) {
+		Query req=entityManager.createQuery("select idEleve from Eleve e WHERE login = "+login+" and password= "+password);
+		return req.getResultList();
+	}
+	
+	
 
 	@Override
 	public void modifierEleve(Eleve e) {
