@@ -1,6 +1,6 @@
 
 <%@ include file="/WEB-INF/views/static/head.jsp" %>
-<%@ include file="/WEB-INF/views/static/header.jsp" %>
+<%@ include file="/WEB-INF/views/static/headerConnexion.jsp" %>
 
 <div id="conteneur">
 	<form:form id="formulaire_login" method="post" action="login" modelAttribute="eleve">
@@ -10,7 +10,7 @@
 				<label for="login"><spring:message code="form.login.pseudo"/></label>
 				<form:input path="login" /> <br/><br/>
 				<label for="password"><spring:message code="form.login.password"/></label>
-				<form:input path="password"/>	
+				<form:input type="password" path="password"/>	
 			</p>
 			<input type="submit" name="loginSubmit" id="loginSubmit" value="<spring:message code="form.login.login"/>">
 		</fieldset>

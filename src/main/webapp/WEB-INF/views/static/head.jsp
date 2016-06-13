@@ -17,3 +17,4 @@
 	    <script src="${mainJs}"></script>
 	</head>
 <body>
+	<div id="bloc_page">
