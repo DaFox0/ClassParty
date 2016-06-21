@@ -1,5 +1,6 @@
+<%@ include file="/WEB-INF/views/static/head.jsp" %>
 <header>
-	<div id="header">
+	<div class="header">
 		<div id="logo">
 			<img src="${logoEpsi}" alt="logo" />
 		</div>

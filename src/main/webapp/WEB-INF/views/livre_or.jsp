@@ -1,4 +1,3 @@
-<%@ include file="/WEB-INF/views/static/head.jsp" %>
 <%@ include file="/WEB-INF/views/static/header.jsp" %>
 <section>
 	<center><h1>Bienvenue sur ole livre d'or</h1></center>

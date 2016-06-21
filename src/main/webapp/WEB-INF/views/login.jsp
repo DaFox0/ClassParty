@@ -1,5 +1,3 @@
-
-<%@ include file="/WEB-INF/views/static/head.jsp" %>
 <%@ include file="/WEB-INF/views/static/headerConnexion.jsp" %>
 
 <div id="conteneur">

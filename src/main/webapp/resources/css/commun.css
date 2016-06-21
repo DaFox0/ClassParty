@@ -12,9 +12,9 @@ body
 
 #conteneur
 {
-	width: 100%;
+	width: 768px;
 	margin:auto;
-	border: 2px solid black;
+	margin-top: -103.5px;
 }
 label{
 	display: block;
@@ -47,7 +47,7 @@ header
 }
 
 
-#header{
+.header{
 	width: 100%;
 }
 #logo{
@@ -107,7 +107,7 @@ nav{
     margin-left: 5%;
 }
 
-nav li
+nav ul li
 {
 	list-style-type: none;
     margin-right: 10%;
