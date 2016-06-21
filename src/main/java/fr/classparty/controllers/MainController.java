@@ -1,5 +1,6 @@
 package fr.classparty.controllers;
 
+import javax.print.attribute.standard.PrinterLocation;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -95,6 +96,12 @@ public class MainController {
 			HttpServletResponse response) throws Exception {
 		ModelAndView model = new ModelAndView("login");
 		if(controleLogin(eleve.getLogin(),eleve.getPassword())){
+			System.out.println(eleve.getLogin() + " ADEEEEEEEEEEEEEEEEE");
+			eleve = metier.selectionnerEleve(eleve.getLogin());
+			System.out.println(eleve.getIdEleve() + " ADEEEEEEEEEEEEEEEEE");
+			System.out.println(eleve.getNom() + " ADEEEEEEEEEEEEEEEEE");
+			System.out.println(eleve.getPrenom() + " ADEEEEEEEEEEEEEEEEE");
+			System.out.println(eleve.getLogin() + " ADEEEEEEEEEEEEEEEEE");
 			model.setViewName("accueil");
 			model.addObject("titre",TITRE_ACCUEIL);
 			model.addObject("activeSession", eleve);
