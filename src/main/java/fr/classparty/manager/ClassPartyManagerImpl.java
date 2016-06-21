@@ -26,8 +26,18 @@ public class ClassPartyManagerImpl implements IClassPartyManager{
 	}
 
 	@Override
-	public Eleve selectionnerEleve(int idEleve) {
-		return entityManager.find(Eleve.class,idEleve);
+	public Eleve selectionnerEleve(String login) {
+		try{
+			Query req=entityManager.createQuery("select e.* from Eleve e WHERE e.login = '"+login+"';");
+			return (Eleve) req.getSingleResult();
+		}catch(Exception ex){
+			return new Eleve();
+		}
+	}
+	
+	public Eleve selectionnerEleveType(int idEleve) {
+		Query req=entityManager.createQuery("select e.* from Eleve e WHERE e.idEleve = "+idEleve);
+		return (Eleve)req.getSingleResult();
 	}
 	
 	@Override

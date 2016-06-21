@@ -122,4 +122,12 @@ public class Eleve {
 		this.password = password;
 	}
 
+	public TypeUtilisateur getType() {
+		return type;
+	}
+
+	public void setType(TypeUtilisateur type) {
+		this.type = type;
+	}
+
 }

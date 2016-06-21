@@ -11,7 +11,7 @@ import fr.classparty.models.TypeUtilisateur;
 
 public interface IClassPartyManager {
 	//Eleve
-	public Eleve selectionnerEleve(int idEleve);
+	public Eleve selectionnerEleve(String login);
 	public int connexion(String login, String password);
 	public void modifierEleve(Eleve e);
 	public void supprimerEleve(Eleve e);
@@ -20,6 +20,7 @@ public interface IClassPartyManager {
 	public List<Eleve> eleveParPrenom(String prenom);
 	public List<Eleve> eleveParClasse(String niveau, int annee);
 	public void enregistrerEleve(Eleve e);
+	public Eleve selectionnerEleveType(int idEleve);
 	
 	//Classe
 	public void ajouterClasse(Classe c);
