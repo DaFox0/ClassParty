@@ -4,6 +4,6 @@
 				<a href="http://www.w3schools.com"><p id="reglement_site">Règlement du site</p></a>
 				<div id="clear"></div>
 			</footer>
-
+		</div>
 	</body>
 </html>
