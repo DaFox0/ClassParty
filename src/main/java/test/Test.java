@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 
 import fr.classparty.models.Eleve;
 /**
- * Test de la cr�ation d'un eleve
+ * Test de la création d'un eleve
  * @author adeclerck
  *
  */
@@ -20,7 +20,7 @@ public class Test {
 		// Appelle le constructeur eleve
 		Eleve eleve = new Eleve("Hoze", "Thomas", "17/01/1994", "picouze", "12345");
 		
-		//Appelle la persistence qui permet de se connecter � la base de donn�e 
+		//Appelle la persistence qui permet de se connecter à la base de donnée 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("manager1");
 		EntityManager entityManager = emf.createEntityManager();
 		

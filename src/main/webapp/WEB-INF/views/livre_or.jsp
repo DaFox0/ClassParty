@@ -7,7 +7,7 @@
 				<div id="clear"></div>
 			</div>
 			<div class="citation">
-				<p class="citation_text">" data center ??? c'est un héro de comic "</p>
+				<p class="citation_text">"Un datawarehouse c'est un personnage de fiction"</p>
 				<div class="citation_auteur">Karim</div>
 			</div>
 		</section>
@@ -19,7 +19,7 @@
 				<div id="clear"></div>
 			</div>
 			<div class="citation">
-				<p class="citation_text">" Mais bien sûr qu'il y a un euro Espagnole !!!! "</p>
+				<p class="citation_text">" Mais bien s�r qu'il y a un euro Espagnol !!!! "</p>
 				<div class="citation_auteur">Karim</div>
 			</div>
 			<div class="citation">
@@ -27,7 +27,7 @@
 				<div class="citation_auteur">Karim</div>
 			</div>
 			<form class="form_livre_or" method="post" action="traitement.php">
-				<textarea class="poster_citation" name="pseudo" id="pseudo" placeholder="écrivez la citation ici "></textarea><br>
+				<textarea class="poster_citation" name="pseudo" id="pseudo" placeholder="Ecrivez la citation ici "></textarea><br>
 				<input class="bouton_livre_or" class="bouton" type="submit" value="Envoyer">
 			</form>
 		</section>

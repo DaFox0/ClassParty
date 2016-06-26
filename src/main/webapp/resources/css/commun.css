@@ -50,6 +50,7 @@ header
 	padding-top: 10px;
 	padding-left: 10px;
 	color:#FDFEFE;
+	text-decoration:none;
 }
 
 #titre
@@ -81,11 +82,15 @@ header
 	text-align: center;
 }
 
+.onglet{
+	color:#FDFEFE;
+	padding:5px;
+	margin:1px;
+}
+
 #onglet_debut
 {
-	margin:0 0 0 30px;
-	background-color: #DF0236 ;
-	color:#FDFEFE;
+	background-color: purple;
 }
 
 #onglet_deux
@@ -97,13 +102,16 @@ header
 #onglet_trois
 {
 	background-color: #53AF31 ;
-	color:#FDFEFE;
 }
 
 #onglet_quatre
 {
 	background-color: #F0800E ;
-	color:#FDFEFE;
+}
+
+#onglet_cinq
+{
+	background-color: #DF0236 ;
 }
 
 #onglet_debut:hover, #onglet_deux:hover, #onglet_trois:hover, #onglet_quatre:hover 
@@ -209,7 +217,6 @@ footer
 {	
 	width: 200px;
 	height: 50px;
-	margin: 100px 0 0 0; 
 	border: 2px solid #EF7E15;
 	border-radius: 10px;
 }
@@ -264,7 +271,7 @@ footer
 #section_tchat
 {	
 	width: 353px;
-	margin: 100px 0 0 10px; 
+	margin: 0px 0 0 10px; 
 	float:left;
 }
 

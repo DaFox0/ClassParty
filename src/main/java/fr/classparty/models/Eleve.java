@@ -31,10 +31,10 @@ public class Eleve {
 	private String password;
 	/**
 	 * Definit le type de l'utilisateur
-	 * 0 : eleve
-	 * 1 : moderateur
+	 * 1 : eleve
+	 * 2 : moderateur
 	 * 		Un moderateur gere sa classe
-	 * 2 : administrateur
+	 * 3 : administrateur
 	 * 		Un administrateur gere les moderateurs et les classes
 	 */
 	

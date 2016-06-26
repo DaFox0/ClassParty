@@ -7,7 +7,7 @@
 				<p>Cours : dans cette partie, vous allez pouvoir renger, classer vos supports de cours, cours par matières.</p>
 			</div>
 			<div id="fil_actus">
-				<p>Mettre le fil d'actualité</p>						
+				<p>Mettre le fil d'actualit�</p>						
 			</div>
 			<div id="clear"></div> 
 		</section>

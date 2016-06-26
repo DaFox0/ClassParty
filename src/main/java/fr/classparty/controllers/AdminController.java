@@ -14,7 +14,6 @@ import fr.classparty.manager.EleveManager;
 import fr.classparty.models.Eleve;
 
 @Controller
-@Component
 public class AdminController {
 	List<Eleve> eleves = new ArrayList<Eleve>(); 
 	

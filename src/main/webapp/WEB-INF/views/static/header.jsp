@@ -2,25 +2,25 @@
 <%@page import="fr.classparty.models.Eleve"%>
 		<header>
 			<p id="logo">
-				<img src="${logoEpsi}" alt="logo" />
+				<a href="accueil"><img src="${logoEpsi}" alt="logo" /></a>
 			</p>
-			<p id="logo_texte">
+			<a id="logo_texte" href="accueil">
 				EPSI <br> L'école d'Ingénierie <br> Informatique 
-			</p>
+			</a>
 			<p id="titre">
 				Bienvenue sur Class Party
 			</p>
 			<div id="clear"></div>
 		</header>
 		<nav id="menu">
-			<a id="onglet_debut" class="onglet" href="tchat">TCHAT</a>
-			<a id="onglet_deux" class="onglet" href="http://www.w3schools.com">GALLERIE IMAGE</a>
-			<a id="onglet_trois" class="onglet" href="livre">LIVRE D'OR</a>
-			<a id="onglet_quatre" class="onglet" href="http://www.w3schools.com">COURS</a>
+			<a id="onglet_debut" class="onglet" href="tchat">Chat</a>
+			<a id="onglet_deux" class="onglet" href="galerie">Galeries</a>
+			<a id="onglet_trois" class="onglet" href="livre">Livre d'or</a>
+			<a id="onglet_quatre" class="onglet" href="http://www.w3schools.com">Cours</a>
 			<c:if test="${activeSession.getType() >= 2}">
-	   			<a id="onglet_quatre" class="onglet" href="">Admin</a>
+   				<a id="onglet_quatre" class="onglet" href="#">Admin</a>
 			</c:if>
-			<a id="onglet_quatre" class="onglet" href="logout">Deconnexion</a>
+			<a id="onglet_cinq" class="onglet" href="logout">Déconnexion</a>
 			<div id="clear"></div>	
 		</nav>
 <div id="messageErreur">${messageErreur}</div>

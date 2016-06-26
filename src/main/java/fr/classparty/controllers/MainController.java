@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import fr.classparty.manager.ClassPartyManagerImpl;
 import fr.classparty.manager.IClassPartyManager;
 import fr.classparty.models.Eleve;
+import fr.classparty.models.Photo;
 
 @Controller
 @SessionAttributes("activeSession")
@@ -27,13 +28,8 @@ public class MainController {
 	static final private String TITRE_ACCUEIL = CLASSPARTY + "Accueil";
 	private IClassPartyManager metier = new ClassPartyManagerImpl();
 	
-	/**
-	 * 
-	 * @return
-	 * @throws Exception
-	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView accueil() throws Exception {
+	public ModelAndView start(){
 		ModelAndView model = new ModelAndView("login");
 		model.addObject("eleve", new Eleve());
 		model.addObject("titre",TITRE_CONNEXION);
@@ -49,12 +45,12 @@ public class MainController {
 	@RequestMapping(value = "/logout")
 	public ModelAndView logOut(SessionStatus status) throws Exception{
 		status.setComplete();
-		return accueil();
+		return start();
 	}
 	
 	/**
 	 * Affiche le tchat.
-	 * A besoin d'être connecté
+	 * A besoin d'Ãªtre connectÃ©
 	 * @param request
 	 * @param response
 	 * @return
@@ -81,6 +77,21 @@ public class MainController {
 		return model;
 	}	
 	
+	/**
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/galerie", method = RequestMethod.GET)
+	public ModelAndView galerie(HttpServletRequest request,
+		HttpServletResponse response) throws Exception {
+		ModelAndView model = new ModelAndView("galerie");
+		model.addObject("photo", new Photo());
+		return model;
+	}
+	
 	
 	/**
 	 * Permet de se connecter en utilisant la methode controleLogin
@@ -96,16 +107,9 @@ public class MainController {
 			HttpServletResponse response) throws Exception {
 		ModelAndView model = new ModelAndView("login");
 		if(controleLogin(eleve.getLogin(),eleve.getPassword())){
-			System.out.println(eleve.getLogin() + " ADEEEEEEEEEEEEEEEEE");
 			eleve = metier.selectionnerEleve(eleve.getLogin());
-			System.out.println(eleve.getIdEleve() + " ADEEEEEEEEEEEEEEEEE");
-			System.out.println(eleve.getNom() + " ADEEEEEEEEEEEEEEEEE");
-			System.out.println(eleve.getPrenom() + " ADEEEEEEEEEEEEEEEEE");
-			System.out.println(eleve.getLogin() + " ADEEEEEEEEEEEEEEEEE");
-			model.setViewName("accueil");
-			model.addObject("titre",TITRE_ACCUEIL);
-			model.addObject("activeSession", eleve);
-			
+			System.out.println(eleve);
+			model = accueil(eleve);
 		}else{
 			model.addObject("titre",TITRE_CONNEXION);
 			model.addObject("eleve", new Eleve());
@@ -113,7 +117,18 @@ public class MainController {
 		}
 		return model;
 	}
-	
+	@RequestMapping(value = "/accueil", method = RequestMethod.GET)
+	public ModelAndView accueil(Eleve eleve){
+		ModelAndView model = new ModelAndView("accueil");
+		if(eleve == null){
+			model = start();
+		}else{
+			System.out.println(eleve);
+			model.addObject("activeSession", eleve);
+			model.addObject("titre",TITRE_ACCUEIL);
+		}
+		return model;
+	}
 	/**
 	 * Verifie le pseudo et le mot de passe
 	 * @param user
