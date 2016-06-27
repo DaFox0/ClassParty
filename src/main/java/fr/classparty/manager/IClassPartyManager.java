@@ -13,9 +13,11 @@ public interface IClassPartyManager {
 	//Eleve
 	public Eleve selectionnerEleve(String login);
 	public int connexion(String login, String password);
-	public void modifierEleve(Eleve e);
-	public void supprimerEleve(Eleve e);
+	public Eleve modifierEleve(Eleve e);
+	public Eleve getEleve(int idele);
+	public void supprimerEleve(int idEleve);
 	public List<Eleve> listerEleve();
+	public List<Eleve> listerEleveModerateur();
 	public List<Eleve> eleveParNom(String nom);
 	public List<Eleve> eleveParPrenom(String prenom);
 	public List<Eleve> eleveParClasse(String niveau, int annee);

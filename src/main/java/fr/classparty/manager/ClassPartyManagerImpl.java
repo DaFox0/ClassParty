@@ -51,21 +51,34 @@ public class ClassPartyManagerImpl implements IClassPartyManager{
 		
 	}
 	
+	public Eleve getEleve(int idele){
+		return entityManager.find(Eleve.class, idele);
+	}
 	
 
 	@Override
-	public void modifierEleve(Eleve e) {
-		entityManager.merge(e);
+	public Eleve modifierEleve(Eleve e) {
+		return entityManager.merge(e);
 	}
 
 	@Override
-	public void supprimerEleve(Eleve e) {
+	public void supprimerEleve(int idele) {
+		Eleve e = entityManager.find(Eleve.class, idele);
+		entityManager.getTransaction().begin();
 		entityManager.remove(e);
+		entityManager.getTransaction().commit();
+		
 	}
 
 	@Override
 	public List<Eleve> listerEleve() {
-		Query req = entityManager.createQuery("select * from Eleve e");
+		Query req = entityManager.createQuery("select e from Eleve e");
+		return req.getResultList();
+	}
+	
+	@Override
+	public List<Eleve> listerEleveModerateur() {
+		Query req = entityManager.createQuery("select e from Eleve e");
 		return req.getResultList();
 	}
 
