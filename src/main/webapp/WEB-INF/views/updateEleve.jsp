@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/views/static/headerAdmin.jsp" %>
 		<section>
-			<form:form method="post" action="updateEleve" modelAttribute="eleve">
+			<form:form method="post" action="updateEleve?idEle=${eleve.idEleve}" modelAttribute="eleve">
 				<fieldset>
 					<!-- <label> Classe :</label>
 					<select>

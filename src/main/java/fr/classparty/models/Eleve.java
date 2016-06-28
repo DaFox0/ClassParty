@@ -44,12 +44,13 @@ public class Eleve {
 		super();
 	}
 	
-	public Eleve(String nom, String prenom, String dateNaissance, String login, String password){
+	public Eleve(String nom, String prenom, String dateNaissance, String login, String password, TypeUtilisateur type){
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.login = login;
 		this.password = password;
+		this.type = type;
 	}
 	
 	/**

@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/views/static/headerAdmin.jsp" %>
 			<section>
-		<h1>Affichage des moderateur</h1>
+		<h1><spring:message code="form.moderateur.affichage"/></h1>
 			<table class="listeEleve">
 				<tr>
 					<th>ID</th>

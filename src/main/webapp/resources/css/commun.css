@@ -62,6 +62,55 @@ header
 	margin-top: 29px;
 }
 
+#titreAdmin
+{
+	float:left;
+	color:#FDFEFE;
+	font-size: 25px;
+	margin-left:25px;
+	margin-top: 29px;
+}
+
+.ongletAdmin
+{
+	text-decoration:none;
+	color:black;
+	width:86px;
+	float: left;
+	text-align: center;
+	background-color:#00A5CD;
+	margin:0 0 10px 20px;
+}
+
+.menuBis
+{
+	float:left;
+	width:162px;
+	margin:20px;
+}
+
+.ongletCO:hover
+{
+	background-color:black;
+	color:#FDFEFE;
+}
+.ongletAdmin:hover
+{
+	background-color:black;
+	color:#FDFEFE;
+}
+
+
+.ongletCO
+{
+	text-decoration:none;
+	color:black;
+	width:86px;
+	float: left;
+	text-align: center;
+	background-color:#00A5CD;
+	margin:20px 0 0 20px;
+}
 
 /********* FIN HEADER *********/
 
@@ -404,8 +453,39 @@ footer
 }
 
 
-
-
-
-
 /********* FIN LIVRE OR *********/
+
+/********* ADMIN *********/
+
+.form
+{
+	margin:10px 0 10px 0;
+}
+
+.float
+{
+	float:left;
+}
+
+.espace
+{
+	margin:0 20px 0 0;
+}
+
+#affichage_moderateur
+{
+	border-top: 1px solid #3B5998;
+}
+
+.listeEleve{
+	width: 768px;
+}
+.listeEleve th {
+	border: 1px solid gray;
+}
+.listeEleve td {
+	border: 1px solid gray;
+	text-align: center;
+}
+
+/********* FIN ADMIN *********/

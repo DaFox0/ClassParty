@@ -7,6 +7,7 @@
 				<form:input path="nom" /> <br/><br/>
 				<label for="srcImage"><spring:message code="form.image.parcourir"/></label>
 				<input type="file" name="image"/>
+				<input type="submit" />
 			</p>
 		</fieldset>
 	</form:form>				

@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import fr.classparty.models.Classe;
 import fr.classparty.models.Commentaire;
@@ -28,7 +29,7 @@ public class ClassPartyManagerImpl implements IClassPartyManager{
 	@Override
 	public Eleve selectionnerEleve(String login) {
 		try{
-			Query req=entityManager.createQuery("select e.* from Eleve e WHERE e.login = '"+login+"';");
+			TypedQuery<Eleve> req=entityManager.createQuery("select e from Eleve e WHERE e.login = '"+login+"'",Eleve.class);
 			return (Eleve) req.getSingleResult();
 		}catch(Exception ex){
 			return new Eleve();
@@ -57,8 +58,10 @@ public class ClassPartyManagerImpl implements IClassPartyManager{
 	
 
 	@Override
-	public Eleve modifierEleve(Eleve e) {
-		return entityManager.merge(e);
+	public void modifierEleve(Eleve e) {
+		entityManager.getTransaction().begin();
+		entityManager.merge(e);
+		entityManager.getTransaction().commit();
 	}
 
 	@Override
@@ -72,13 +75,13 @@ public class ClassPartyManagerImpl implements IClassPartyManager{
 
 	@Override
 	public List<Eleve> listerEleve() {
-		Query req = entityManager.createQuery("select e from Eleve e");
+		Query req = entityManager.createQuery("select e from Eleve e where e.type.idTypeUtilisateur = 1 ");
 		return req.getResultList();
 	}
 	
 	@Override
 	public List<Eleve> listerEleveModerateur() {
-		Query req = entityManager.createQuery("select e from Eleve e");
+		Query req = entityManager.createQuery("select e from Eleve e where e.type.idTypeUtilisateur = 2");
 		return req.getResultList();
 	}
 

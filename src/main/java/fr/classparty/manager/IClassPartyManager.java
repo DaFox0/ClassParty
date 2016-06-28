@@ -13,7 +13,7 @@ public interface IClassPartyManager {
 	//Eleve
 	public Eleve selectionnerEleve(String login);
 	public int connexion(String login, String password);
-	public Eleve modifierEleve(Eleve e);
+	public void modifierEleve(Eleve e);
 	public Eleve getEleve(int idele);
 	public void supprimerEleve(int idEleve);
 	public List<Eleve> listerEleve();

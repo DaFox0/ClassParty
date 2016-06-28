@@ -36,6 +36,19 @@ public class MainController {
 		return model;
 	}
 	
+	@RequestMapping(value = "/accueil", method = RequestMethod.GET)
+	public ModelAndView accueil(Eleve eleve){
+		ModelAndView model = new ModelAndView("accueil");
+		if(eleve == null){
+			model = start();
+		}else{
+			System.out.println(eleve);
+			model.addObject("activeSession", eleve);
+			model.addObject("titre",TITRE_ACCUEIL);
+		}
+		return model;
+	}
+	
 	/**
 	 * Permet de se deconnecter
 	 * @param status
@@ -50,15 +63,14 @@ public class MainController {
 	
 	/**
 	 * Affiche le tchat.
-	 * A besoin d'Ãªtre connectÃ©
+	 * A besoin d'être connecté
 	 * @param request
 	 * @param response
 	 * @return
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/tchat", method = RequestMethod.GET)
-	public ModelAndView dialogue(HttpServletRequest request,
-		HttpServletResponse response) throws Exception {
+	public ModelAndView dialogue() throws Exception {
 		ModelAndView model = new ModelAndView("dialogue");
 		return model;
 	}
@@ -71,12 +83,11 @@ public class MainController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/livre", method = RequestMethod.GET)
-	public ModelAndView livre(HttpServletRequest request,
-		HttpServletResponse response) throws Exception {
+	public ModelAndView livre() throws Exception {
 		ModelAndView model = new ModelAndView("livre_or");
 		return model;
 	}	
-	
+
 	/**
 	 * 
 	 * @param request
@@ -85,13 +96,11 @@ public class MainController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/galerie", method = RequestMethod.GET)
-	public ModelAndView galerie(HttpServletRequest request,
-		HttpServletResponse response) throws Exception {
+	public ModelAndView galerie() throws Exception {
 		ModelAndView model = new ModelAndView("galerie");
 		model.addObject("photo", new Photo());
 		return model;
 	}
-	
 	
 	/**
 	 * Permet de se connecter en utilisant la methode controleLogin
@@ -102,9 +111,7 @@ public class MainController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView login(@ModelAttribute Eleve eleve,
-			HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+	public ModelAndView login(@ModelAttribute Eleve eleve) throws Exception {
 		ModelAndView model = new ModelAndView("login");
 		if(controleLogin(eleve.getLogin(),eleve.getPassword())){
 			eleve = metier.selectionnerEleve(eleve.getLogin());
@@ -114,18 +121,6 @@ public class MainController {
 			model.addObject("titre",TITRE_CONNEXION);
 			model.addObject("eleve", new Eleve());
 			model.addObject("messageErreur", "Identifiant incorrect.");
-		}
-		return model;
-	}
-	@RequestMapping(value = "/accueil", method = RequestMethod.GET)
-	public ModelAndView accueil(Eleve eleve){
-		ModelAndView model = new ModelAndView("accueil");
-		if(eleve == null){
-			model = start();
-		}else{
-			System.out.println(eleve);
-			model.addObject("activeSession", eleve);
-			model.addObject("titre",TITRE_ACCUEIL);
 		}
 		return model;
 	}

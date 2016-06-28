@@ -2,7 +2,7 @@
 <%@page import="fr.classparty.models.Eleve"%>
 		<header>
 			<p id="logo">
-				<a href="accueil"><img src="${logoEpsi}" alt="logo" /></a>
+				<a href="../accueil"><img src="${logoEpsi}" alt="logo" /></a>
 			</p>
 			<p id="logo_texte">
 				EPSI <br> L'école d'Ingénierie <br> Informatique 

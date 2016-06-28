@@ -1,29 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Création d'un élève</title>
-</head>
-<body>
-
-	<form action="webservice.do">
-		<label> Nom :</label>
-		<input type="text">
-		<label> Prénom :</label>
-		<input type="text">
-		<label> Age :</label>
-		<input type="text">
-		<label> Classe :</label>
-		<select>
-			<option value="I4"> I4 </option>
-		</select>
-		<input type="radio" name="type" value="1"> Eleve<br>
-		<input type="radio" name="type" value="2"> Modérateur<br>
-		<input type="radio" name="type" value="3"> Administrateur<br>
-		<input type="submit" value="Enregistrer">
-	</form>
-
-</body>
-</html>
+<%@ include file="/WEB-INF/views/static/header.jsp" %>
+		<section>
+			<form:form method="post" action="addEleve" modelAttribute="eleve">
+				<fieldset>
+					<!-- <label> Classe :</label>
+					<select>
+						<option value="I4"> I4 </option>
+					</select>
+					<input type="radio" name="type" value="0"> Eleve<br>
+					<input type="radio" name="type" value="1"> Modï¿½rateur<br>
+					<input type="radio" name="type" value="2"> Administrateur<br> -->
+					<legend><spring:message code="form.creation.legende"/></legend>
+					<p class="champLogin">
+						<label for="nom"><spring:message code="form.eleve.nom"/></label>
+						<form:input path="nom" /> <br/><br/>
+						<label for="prenom"><spring:message code="form.eleve.prenom"/></label>
+						<form:input path="prenom"/>	<br/><br/>
+						<label for="date"><spring:message code="form.eleve.dateNaissance"/></label>
+						<form:input type="date" path="dateNaissance"/>	
+					</p>
+					<input type="submit" name="loginSubmit" id="loginSubmit" value="<spring:message code="form.eleve.creation"/>">
+					<div id="clear"></div>
+				</fieldset>
+			</form:form>
+		</section>
+<%@ include file="/WEB-INF/views/static/footer.jsp" %>

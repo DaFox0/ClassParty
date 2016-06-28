@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/views/static/headerAdmin.jsp" %>
 		<section>
-		<h1>Affichage des éléves</h1>
+		<h1><spring:message code="form.eleve.affichage"/></h1>
 			<table class="listeEleve">
 				<tr>
 					<th>ID</th>
